@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:openDrawer="start"
+    android:fitsSystemWindows="true"
+    tools:context=".Pages.HomeActivity">
+
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        >
+
+    </fragment>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/main_menu"
+        tools:ignore="MissingConstraints"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        tools:layout_editor_absoluteY="16dp" >
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:background="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/station_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.042"
+            app:navigationIcon="@drawable/menu"
+            tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/idSearchView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="11.4dp"
+                app:iconifiedByDefault="true"
+                android:animateLayoutChanges="true"
+                app:queryHint="Search Here"
+                app:queryBackground="@android:color/transparent"
+                app:searchHintIcon="@null"
+                android:layoutDirection="rtl"
+                android:layout_gravity="end"
+            />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/station_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp">
+
+
+                <TextView
+                    android:id="@+id/station_name_booking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="37dp"
+                    android:layout_toEndOf="@+id/station_img_booking_page"
+                    android:fontFamily="@font/secularone_regular"
+                    android:text="Station Name"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/secularone_regular" />
+
+                <ImageView
+                    android:id="@+id/station_img_booking_page"
+                    android:layout_width="103dp"
+                    android:layout_height="99dp"
+                    android:layout_alignParentStart="true"
+                    app:srcCompat="@drawable/station_ico" />
+
+                <TextView
+                    android:id="@+id/timing_booking_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="75dp"
+
+                    android:layout_marginBottom="0dp"
+                    android:layout_toEndOf="@+id/station_img_booking_page"
+                    android:paddingTop="5dp"
+                    android:text="₹ 16 per unit"
+                    android:textColor="@color/black"
+                    android:textSize="12dp" />
+
+                <Button
+                    android:id="@+id/reserve_btn"
+                    android:layout_width="133dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="137dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_toEndOf="@+id/station_img_booking_page"
+                    android:background="@drawable/btn_bg"
+                    android:text="Reserve"
+                    android:textColor="@color/white" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
